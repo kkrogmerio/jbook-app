@@ -1,0 +1,25 @@
+.main-action-bar-wrapper {
+    position: relative;
+    height:80px;
+    width:100%;
+    
+
+    display: flex;
+}
+.main-action-bar {
+    position: absolute;
+    top:20px;
+    right:20px;
+    z-index: 1;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.main-action-bar:hover button{
+  
+    opacity: 1;
+}
+.main-action-bar button {
+    align-items: center;
+    justify-self: center;
+   margin-left:20px;
+}
