@@ -3,6 +3,7 @@ export interface Cell{
     id:string;
     type:CellTypes;
     content:string;
+
 }
 export type Direction = "up" | "down";
 export interface CellsState {
@@ -12,6 +13,7 @@ export interface CellsState {
     data: {
       [key: string]: Cell;
     };
+    editable:boolean;
   }
   
 export  const initialState: CellsState = {
@@ -19,4 +21,5 @@ export  const initialState: CellsState = {
     error: null,
     order: [],
     data: {},
+    editable:true
   };

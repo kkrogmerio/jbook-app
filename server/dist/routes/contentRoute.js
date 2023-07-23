@@ -13,18 +13,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const uuid_1 = require("uuid");
+const nanoid_1 = require("nanoid");
 const Content_1 = __importDefault(require("../models/Content"));
 const router = express_1.default.Router();
 router.post('/content', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const id = (0, uuid_1.v4)();
-    const content = new Content_1.default({ _id: id, content: req.body.content });
+    const id = (0, nanoid_1.nanoid)();
+    const content = new Content_1.default({
+        _id: id,
+        cells: req.body.cells,
+        bundles: req.body.bundles,
+    });
     yield content.save();
-    const url = `${req.protocol}://${req.get('host')}/${id}`;
-    res.status(201).send({ id, url });
+    res.status(201).send({ shareId: id });
 }));
-router.get('/content/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const content = yield Content_1.default.findById(req.params.id);
+router.get('/content/:shareId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const content = yield Content_1.default.findById(req.params.shareId);
     if (content) {
         res.status(200).send(content);
     }

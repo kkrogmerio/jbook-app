@@ -1,18 +1,17 @@
 import "bulmaswatch/superhero/bulmaswatch.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
 import * as ReactDOMClient from "react-dom/client";
-
-import {store} from './state';
+import { BrowserRouter as Router } from 'react-router-dom'; // import the router here
 import { Provider } from "react-redux";
+import { store } from './state';
 import App from "./App";
 
 const Jbook = () => {
-
-
   return (
     <Provider store={store}>
-   <App/>
+      <Router>
+        <App/>
+      </Router>
     </Provider>
   );
 };

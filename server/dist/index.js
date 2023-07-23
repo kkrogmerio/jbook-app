@@ -12,8 +12,8 @@ mongoose_1.default.connect('mongodb://localhost/test');
 // Allow parsing of JSON in request body
 app.use(express_1.default.json());
 // Use the content routes
-app.use(contentRoute_1.default);
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.use('/api', contentRoute_1.default);
+app.listen(3010, () => {
+    console.log('Server is running on port 3010');
 });
 //# sourceMappingURL=index.js.map

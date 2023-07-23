@@ -16,11 +16,12 @@ export interface FetchContentRequest{
 }
 export interface FetchContentResponse{
     cells:{
-         [key: string]: Cell;
+        data: {[key: string]: Cell;}
+        order: string[];
      },
-     
+
      bundles?:{
-         [key:string]: {code:string} | undefined
+         [key:string]: {code:string;err:string} | undefined
      }
  
  }

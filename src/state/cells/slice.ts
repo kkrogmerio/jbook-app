@@ -49,6 +49,9 @@ export const cellsSlice = createSlice({
       state.data={};
       state.loading=false;
       state.error=null;
+    },
+    setEditable:(state,action:PayloadAction<boolean>)=>{
+      state.editable=action.payload;
     }
 
   },
@@ -58,6 +61,6 @@ const randomId = () => {
   return Math.random().toString(36).substr(2, 5);
 };
 
-export const { moveCell, deleteCell, insertCellAfter, updateCell,removeCells } = cellsSlice.actions;
+export const { moveCell, deleteCell, insertCellAfter, updateCell,removeCells,setEditable } = cellsSlice.actions;
 
 export default cellsSlice.reducer;

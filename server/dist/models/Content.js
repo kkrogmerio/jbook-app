@@ -26,7 +26,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const ContentSchema = new mongoose_1.Schema({
     _id: { type: String, required: true },
-    content: { type: String, required: true }
+    cells: {
+        data: { type: mongoose_1.Schema.Types.Mixed, required: true },
+        order: { type: [String], required: true },
+    },
+    bundles: {
+        type: mongoose_1.Schema.Types.Mixed,
+    },
 });
-exports.default = mongoose_1.default.model('Content', ContentSchema);
+exports.default = mongoose_1.default.model("Content", ContentSchema);
 //# sourceMappingURL=Content.js.map
