@@ -28,7 +28,9 @@ router.post('/content', (req, res) => __awaiter(void 0, void 0, void 0, function
 }));
 router.get('/content/:shareId', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const content = yield Content_1.default.findById(req.params.shareId);
+    console.log("AJUNG AICI??>");
     if (content) {
+        console.log("DE AICI");
         res.status(200).send(content);
     }
     else {

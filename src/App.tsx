@@ -21,7 +21,7 @@ const App = () => {
     { shareId: pathSegments[2] },
     { skip: pathSegments.length <= 2 }
   );
-
+    console.log(content,'\n error :',error,'\n',isLoading);
   useEffect(() => {
     if (pathSegments.length === 2 && pathSegments[1] === "") {
       setEditable(true);

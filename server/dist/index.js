@@ -5,10 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const cors_1 = __importDefault(require("cors"));
 const contentRoute_1 = __importDefault(require("./routes/contentRoute"));
 const app = (0, express_1.default)();
 // Connect to MongoDB
 mongoose_1.default.connect('mongodb://localhost/test');
+// Use the cors middleware
+app.use((0, cors_1.default)()); // enable cors
 // Allow parsing of JSON in request body
 app.use(express_1.default.json());
 // Use the content routes

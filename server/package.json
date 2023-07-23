@@ -2,18 +2,23 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js", 
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node dist/index.js", 
-    "dev": "ts-node server/index.ts", 
+    "start": "npm run build && node dist/index.js",
+    "dev": "ts-node server/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^5.1.6",
-    "ts-node": "^10.4.0"
+    "@types/cors": "^2.8.13",
+    "ts-node": "^10.4.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "mongoose": "^7.4.0"
   }
 }

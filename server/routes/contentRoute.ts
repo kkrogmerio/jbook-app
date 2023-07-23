@@ -10,7 +10,7 @@ router.post('/content', async (req: Request<{}, {}, IContent>, res: Response) =>
       cells: req.body.cells, 
       bundles: req.body.bundles,
     });
-  
+    
     await content.save();
     
     res.status(201).send({ shareId: id });
@@ -19,8 +19,9 @@ router.post('/content', async (req: Request<{}, {}, IContent>, res: Response) =>
 
 router.get('/content/:shareId', async (req: Request<{shareId: string}>, res: Response) => {
     const content: IContent | null = await Content.findById(req.params.shareId);
-  
+    console.log("AJUNG AICI??>")
     if (content) {
+        console.log("DE AICI");
       res.status(200).send(content);
     } else {
       res.status(404).send({ error: 'Content not found' });
