@@ -1,0 +1,12 @@
+
+  .modal-card-foot-custom {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cancel-button-custom {
+    margin-left: 20px;
+  }
+  .modal-card-body-bg-color {
+    background-color: #1d2a38;
+  }

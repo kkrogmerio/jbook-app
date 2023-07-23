@@ -4,9 +4,9 @@ import CodeEditor from "./codeEditor";
 import Resizable from "./resizable";
 import bundle from "../bundler";
 import { Cell } from "../state";
-import { useActions } from "../hooks/useActions";
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import { useCumulativeCode } from "../hooks/useCumulativeCode";
+import { useActions } from "../mainHooks/useActions";
+import { useTypedSelector } from "../mainHooks/useTypedSelector";
+import { useCumulativeCode } from "../mainHooks/useCumulativeCode";
 import "./codeCell.css";
 interface CodeCellProps {
   cell: Cell;
@@ -14,7 +14,7 @@ interface CodeCellProps {
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   const { updateCell, createBundle } = useActions();
   const bundle = useTypedSelector((state) => state.bundles[cell.id]);
- 
+  
   const cumulativeCode=useCumulativeCode(cell.id);
   useEffect(() => {
     if (!bundle) {

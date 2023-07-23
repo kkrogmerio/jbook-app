@@ -8,7 +8,7 @@ import { store } from "./state";
 import { Provider } from "react-redux";
 import CellList from "./components/cellList";
 import MainActionBar from "./components/mainActionBar";
-import { useTypedSelector } from "./hooks/useTypedSelector";
+import { useTypedSelector } from "./mainHooks/useTypedSelector";
 const App = () => {
   const noOfCells = useTypedSelector((state) => state.cells.order.length);
 

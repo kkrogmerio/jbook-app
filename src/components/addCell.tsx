@@ -1,5 +1,5 @@
-import { useActions } from "../hooks/useActions";
-import { useTypedSelector } from "../hooks/useTypedSelector";
+import { useActions } from "../mainHooks/useActions";
+import { useTypedSelector } from "../mainHooks/useTypedSelector";
 import "./addCell.css";
 interface AddCellProps {
   previousCellId: string | null;
@@ -14,19 +14,19 @@ const AddCell: React.FC<AddCellProps> = ({ previousCellId }) => {
         <button
           className="button is-rounded is-primary is-small"
           onClick={() => insertCellAfter(previousCellId, "code")}>
-          <span className="icon is-small icon-margin" style={{ marginRight: 5 }}>
+          <span className="is-small  icon-margin"  >
             <i className="fas fa-plus"></i>
           </span>
-          Code
+         Code
         </button>
         <button
-          className="button is-rounded is-primary is-small"
-          onClick={() => insertCellAfter(previousCellId, "text")}>
-          <span className="icon is-small icon-margin" style={{ marginRight: 5 }}>
-            <i className="fas fa-plus"></i>
-          </span>
-          Text
-        </button>
+  className="button is-rounded is-primary is-small"
+  onClick={() => insertCellAfter(previousCellId, "text")}>
+  <span className="is-small  icon-margin "  >
+    <i className="fas fa-plus"></i>
+  </span>
+  Text
+</button>
       </div>
       <div className="divider"></div>
     </div>

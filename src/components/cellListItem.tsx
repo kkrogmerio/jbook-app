@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Cell } from "../state/cell";
+import { Cell } from "../types/cell";
 import CodeCell from "./codeCell";
 import TextEditor from "./textEditor";
 import ActionBar from "./actionBar";

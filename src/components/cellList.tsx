@@ -1,4 +1,4 @@
-import { useTypedSelector } from "../hooks/useTypedSelector";
+import { useTypedSelector } from "../mainHooks/useTypedSelector";
 import { Fragment } from "react"; 
 import CellListItem from "./cellListItem";
 import AddCell from "./addCell";
@@ -7,6 +7,7 @@ const CellList: React.FC = () => {
   const orderedCells = useTypedSelector(({ cells: { order, data } }) => {
     return order.map((id) => data[id]);
   });
+
   const renderedCells = orderedCells.map((cell) => (
     <Fragment key={cell.id}>
     

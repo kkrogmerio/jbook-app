@@ -1,3 +1,6 @@
+.icon-margin {
+  margin-right:10px;
+}
 .add-cell {
     position: relative;
     margin: 10px 0;
@@ -30,6 +33,3 @@
 .add-cell .add-buttons button {
   margin: 0 40px;
 }
-.add-cell .icon-margin {
-    margin-right: 5px;
-  }
